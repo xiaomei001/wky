@@ -127,6 +127,9 @@ echo "外网 IP:       $EXTERNAL_IP"
             sleep "3"
             ;;
         0)
+            rm /tmp/menu.sh
+            rm /tmp/wky-main.zip
+            rm -rf /tmp/wky-main/
             echo "退出程序。"
             exit 0
             ;;
