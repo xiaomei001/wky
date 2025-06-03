@@ -117,12 +117,14 @@ echo "外网 IP:       $EXTERNAL_IP"
             sleep "10"
             ;;
         8)
-            echo "退出程序。"
-            exit 0
+            sudo bash /tmp/wky-main/jiaoben/08.guhua.sh
+            echo "10秒后自动返回主菜单"
+            sleep "10"
             ;;
         9)
-            echo "退出程序。"
-            exit 0
+            sudo bash /tmp/wky-main/jiaoben/09.senji.sh
+            echo "10秒后自动返回主菜单"
+            sleep "10"
             ;;
         0)
             echo "退出程序。"
