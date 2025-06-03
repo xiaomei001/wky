@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# 脚本必须在 root 权限下运行
+if [ "$(id -u)" -ne 0 ]; then
+    echo "错误：本脚本必须以 root 权限运行。"
+    echo "请使用 sudo 或以 root 用户身份执行。"
+    exit 1
+fi
+
+# 检查是否提供了参数
+if [ $# -lt 1 ]; then
+    echo "用法: $0 /path/to/script.sh [args...]"
+    exit 1
+fi
+
+TARGET_SCRIPT="$1"
+shift  # 移除第一个参数，保留后续参数
+
+# 检查目标脚本是否存在
+if [ ! -f "$TARGET_SCRIPT" ]; then
+    echo "错误：目标脚本 '$TARGET_SCRIPT' 不存在。"
+    exit 1
+fi
+
+# 检查目标脚本是否可执行
+if [ ! -x "$TARGET_SCRIPT" ]; then
+    echo "提示：目标脚本不可执行，尝试赋予可执行权限..."
+    chmod +x "$TARGET_SCRIPT" || {
+        echo "错误：无法赋予目标脚本执行权限。"
+        exit 1
+    }
+fi
+
+# 执行目标脚本并传递参数
+echo "开始以 root 权限运行：$TARGET_SCRIPT $@"
+"$TARGET_SCRIPT" "$@"
+EXIT_CODE=$?
+
+echo "脚本执行完毕，退出码：$EXIT_CODE"
+exit $EXIT_CODE
