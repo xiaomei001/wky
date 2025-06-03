@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+#  set -e
 
 # 1. 创建目录并复制脚本
 mkdir -p /opt/wky-main
