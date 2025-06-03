@@ -8,7 +8,7 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 cd /tmp
 wget -O /tmp/wky-main.zip "https://git.aganemby.top/https://github.com/xiaomei001/wky/archive/refs/heads/main.zip"
-unzip /tmp/wky-main.zip -d /tmp
+unzip -o /tmp/wky-main.zip -d /tmp
 
 # 设置选项菜单
 show_menu() {
