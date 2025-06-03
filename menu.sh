@@ -130,6 +130,7 @@ echo "外网 IP:       $EXTERNAL_IP"
             rm /tmp/menu.sh
             rm /tmp/wky-main.zip
             rm -rf /tmp/wky-main/
+            rm /tmp/xiazai.txt
             echo "退出程序。"
             exit 0
             ;;
