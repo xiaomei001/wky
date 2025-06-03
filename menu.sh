@@ -98,8 +98,8 @@ get_external_ip() {
 }
 EXTERNAL_IP=$(get_external_ip)
 echo "外网 IP:       $EXTERNAL_IP"
-        echo "10秒后自动返回主菜单"
-        sleep "10"
+        echo "6秒后自动返回主菜单"
+        sleep "6"
             ;;
         5)
             sudo bash /tmp/wky-main/jiaoben/05.msd.iso.sh
@@ -113,18 +113,18 @@ echo "外网 IP:       $EXTERNAL_IP"
             ;;
         7)
             sudo bash /tmp/wky-main/jiaoben/07.xiazai.sh
-            echo "10秒后自动返回主菜单"
-            sleep "10"
+            echo "5秒后自动返回主菜单"
+            sleep "5"
             ;;
         8)
             sudo bash /tmp/wky-main/jiaoben/08.guhua.sh
-            echo "10秒后自动返回主菜单"
-            sleep "10"
+            echo "3秒后自动返回主菜单"
+            sleep "3"
             ;;
         9)
             sudo bash /tmp/wky-main/jiaoben/09.senji.sh
-            echo "10秒后自动返回主菜单"
-            sleep "10"
+            echo "3秒后自动返回主菜单"
+            sleep "3"
             ;;
         0)
             echo "退出程序。"
