@@ -7,34 +7,46 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-# 检查是否提供了参数
-if [ $# -lt 1 ]; then
-    echo "用法: $0 /path/to/script.sh [args...]"
-    exit 1
-fi
+# 设置选项菜单
+show_menu() {
+    clear
+    echo "==== 管理工具菜单 ===="
+    echo "1. 安装 PPTP"
+    echo "2. 安装 NPS"
+    echo "3. 检查服务器连接情况"
+    echo "4. 显示本机 IP"
+    echo "5. 卸载"
+    echo "0. 退出"
+    echo "======================"
+    echo -n "请输入选项 [0-5]: "
+}
 
-TARGET_SCRIPT="$1"
-shift  # 移除第一个参数，保留后续参数
-
-# 检查目标脚本是否存在
-if [ ! -f "$TARGET_SCRIPT" ]; then
-    echo "错误：目标脚本 '$TARGET_SCRIPT' 不存在。"
-    exit 1
-fi
-
-# 检查目标脚本是否可执行
-if [ ! -x "$TARGET_SCRIPT" ]; then
-    echo "提示：目标脚本不可执行，尝试赋予可执行权限..."
-    chmod +x "$TARGET_SCRIPT" || {
-        echo "错误：无法赋予目标脚本执行权限。"
-        exit 1
-    }
-fi
-
-# 执行目标脚本并传递参数
-echo "开始以 root 权限运行：$TARGET_SCRIPT $@"
-"$TARGET_SCRIPT" "$@"
-EXIT_CODE=$?
-
-echo "脚本执行完毕，退出码：$EXIT_CODE"
-exit $EXIT_CODE
+while true; do
+    show_menu
+    read -r choice
+    case "$choice" in
+        1)
+            bash install_pptp.sh
+            ;;
+        2)
+            bash install_nps.sh
+            ;;
+        3)
+            bash check_server.sh
+            ;;
+        4)
+            bash show_ip.sh
+            ;;
+        5)
+            bash uninstall.sh
+            ;;
+        0)
+            echo "退出程序。"
+            exit 0
+            ;;
+        *)
+            echo "无效选项，请重新输入。"
+            sleep 1
+            ;;
+    esac
+done
