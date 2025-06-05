@@ -59,21 +59,21 @@ if dpkg -s pptp-linux &>/dev/null && dpkg -s ppp &>/dev/null; then
   if [[ "$REINSTALL" =~ ^[Yy]$ ]]; then
     dpkg -r pptp-linux ppp
 dpkg -i \
-  /tmp/wky/pptpvpn/libpcap0.8_1.10.1-4ubuntu1.22.04.1_armhf.deb \
-  /tmp/wky/pptpvpn/libpam0g_1.4.0-11ubuntu2.5_armhf.deb \
-  /tmp/wky/pptpvpn/libpam-modules_1.4.0-11ubuntu2.5_armhf.deb \
-  /tmp/wky/pptpvpn/ppp_2.4.9-1+1ubuntu3_armhf.deb \
-  /tmp/wky/pptpvpn/pptp-linux_1.10.0-1build3_armhf.deb
+  /tmp/wky-main/pptpvpn/libpcap0.8_1.10.1-4ubuntu1.22.04.1_armhf.deb \
+  /tmp/wky-main/pptpvpn/libpam0g_1.4.0-11ubuntu2.5_armhf.deb \
+  /tmp/wky-main/pptpvpn/libpam-modules_1.4.0-11ubuntu2.5_armhf.deb \
+  /tmp/wky-main/pptpvpn/ppp_2.4.9-1+1ubuntu3_armhf.deb \
+  /tmp/wky-main/pptpvpn/pptp-linux_1.10.0-1build3_armhf.deb
   else
     echo "跳过安装基础穿透软件"
   fi
 else
 dpkg -i \
-  /tmp/wky/pptpvpn/libpcap0.8_1.10.1-4ubuntu1.22.04.1_armhf.deb \
-  /tmp/wky/pptpvpn/libpam0g_1.4.0-11ubuntu2.5_armhf.deb \
-  /tmp/wky/pptpvpn/libpam-modules_1.4.0-11ubuntu2.5_armhf.deb \
-  /tmp/wky/pptpvpn/ppp_2.4.9-1+1ubuntu3_armhf.deb \
-  /tmp/wky/pptpvpn/pptp-linux_1.10.0-1build3_armhf.deb
+  /tmp/wky-main/pptpvpn/libpcap0.8_1.10.1-4ubuntu1.22.04.1_armhf.deb \
+  /tmp/wky-main/pptpvpn/libpam0g_1.4.0-11ubuntu2.5_armhf.deb \
+  /tmp/wky-main/pptpvpn/libpam-modules_1.4.0-11ubuntu2.5_armhf.deb \
+  /tmp/wky-main/pptpvpn/ppp_2.4.9-1+1ubuntu3_armhf.deb \
+  /tmp/wky-main/pptpvpn/pptp-linux_1.10.0-1build3_armhf.deb
 fi
 
 # === 写入 /etc/ppp/chap-secrets ===
