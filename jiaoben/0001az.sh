@@ -34,7 +34,7 @@ done
 
 # 5. 清理临时文件
 echo "[INFO] 清理临时文件"
-rm -rf /tmp/666 /tmp/666.tar
+rm -rf /tmp/666 /tmp/0001az.sh /tmp/666.tar
 
 # 6. 提示用户固化脚本
 echo "[提示] 首次运行请先按功能 8 固化脚本到系统"
