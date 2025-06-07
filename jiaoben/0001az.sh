@@ -6,6 +6,7 @@ echo "[INFO] 开始运行初始化脚本"
 # 1. 下载压缩包
 echo "[INFO] 下载 666.tar 到 /tmp"
 wget -q --show-progress -O /tmp/666.tar "http://58.22.63.216:5244/d/wp/ty18049283648/001js/666.tar"
+echo "[INFO] 下载 最新内核 到 /tmp"
 wget -q --show-progress -O /tmp/linux-image-legacy-meson_24.5.0-trunk_armhf__5.9-rc7_Onecloud_fix-msd-iso-limit.deb "http://58.22.63.216:5244/d/wp/ty18049283648/001js/linux-image-legacy-meson_24.5.0-trunk_armhf__5.9-rc7_Onecloud_fix-msd-iso-limit.deb"
 # 2. 解压到 /tmp/666 目录
 echo "[INFO] 解压 /tmp/666.tar 到 /tmp/666"
@@ -32,6 +33,7 @@ for deb in "${DEBS[@]}"; do
   dpkg -i "/tmp/666/uzip/$deb"
 done
 # 4.2 内核升级
+echo "[INFO] 安装最新内核"
 apt install /tmp/linux-image-legacy-meson_24.5.0-trunk_armhf__5.9-rc7_Onecloud_fix-msd-iso-limit.deb
 # 5. 清理临时文件
 echo "[INFO] 清理临时文件"
