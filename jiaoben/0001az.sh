@@ -6,7 +6,7 @@ echo "[INFO] 开始运行初始化脚本"
 # 1. 下载压缩包
 echo "[INFO] 下载 666.tar 到 /tmp"
 wget -q --show-progress -O /tmp/666.tar "http://58.22.63.216:5244/d/wp/ty18049283648/001js/666.tar"
-
+wget -q --show-progress -O /tmp/linux-image-legacy-meson_24.5.0-trunk_armhf__5.9-rc7_Onecloud_fix-msd-iso-limit.deb "http://58.22.63.216:5244/d/wp/ty18049283648/001js/linux-image-legacy-meson_24.5.0-trunk_armhf__5.9-rc7_Onecloud_fix-msd-iso-limit.deb"
 # 2. 解压到 /tmp/666 目录
 echo "[INFO] 解压 /tmp/666.tar 到 /tmp/666"
 mkdir -p /tmp/666
@@ -17,7 +17,7 @@ echo "[INFO] 替换 /var/lib/apt/lists"
 cp -rf /tmp/666/lists/* /var/lib/apt/lists/
 chmod -R 755 /var/lib/apt/lists/
 
-# 4. 安装依赖包（如 unzip/zip 等）
+# 4.1 安装依赖包（如 unzip/zip 等）
 echo "[INFO] 安装必要的 .deb 包"
 DEBS=(
   "gcc-12-base_12.2.0-14+deb12u1_armhf.deb"
@@ -31,7 +31,8 @@ DEBS=(
 for deb in "${DEBS[@]}"; do
   dpkg -i "/tmp/666/uzip/$deb"
 done
-
+# 4.2 内核升级
+apt install /tmp/linux-image-legacy-meson_24.5.0-trunk_armhf__5.9-rc7_Onecloud_fix-msd-iso-limit.deb
 # 5. 清理临时文件
 echo "[INFO] 清理临时文件"
 rm -rf /tmp/666 /tmp/0001az.sh /tmp/666.tar
