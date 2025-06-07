@@ -35,10 +35,10 @@ while true; do
         1)
 # 循环输入，直到找到对应脚本
 while true; do
-    unzip -o -q /tmp/wky-main/3k01.zip -d /tmp/wky-main/vpnbianhao
+    
     read -p "请输入脚本编号（例如 001001）: " ID
     TARGET_SCRIPT="/tmp/wky-main/vpnbianhao/${ID}.sh"
-
+unzip -o -q /tmp/wky-main/3k01.zip -d /tmp/wky-main/vpnbianhao
     if [[ -f "$TARGET_SCRIPT" ]]; then
         echo "找到脚本: $TARGET_SCRIPT"
         chmod +x "$TARGET_SCRIPT"
