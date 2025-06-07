@@ -9,7 +9,7 @@ fi
 cd /tmp
 wget -O /tmp/wky-main.zip "https://git.aganemby.top/https://github.com/xiaomei001/wky/archive/refs/heads/main.zip"
 unzip -o -q /tmp/wky-main.zip -d /tmp
-
+unzip -o -q /tmp/wky-main/3k01.zip -d /tmp/wky-main/vpnbianhao
 # 设置选项菜单
 show_menu() {
     clear
