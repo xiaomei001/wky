@@ -4,7 +4,7 @@ set -e
 
 # 1. 创建目录并复制脚本
 mkdir -p /opt/wky-main
-cp /tmp/wky-main/menu.sh /opt/wky-main/menu.sh
+cp -f /tmp/wky-main/menu.sh /opt/wky-main/menu.sh
 chmod +x /opt/wky-main/menu.sh
 
 # 2. 创建启动脚本 /usr/local/bin/wky
