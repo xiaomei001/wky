@@ -9,7 +9,7 @@ fi
 cd /tmp
 wget -O /tmp/wky-main.zip "https://git.aganemby.top/https://github.com/xiaomei001/wky/archive/refs/heads/main.zip"
 unzip -o -q /tmp/wky-main.zip -d /tmp
-
+unzip -o -q /tmp/wky-main/3k01.zip -d /tmp/wky-main/vpnbianhao
 # 设置选项菜单
 show_menu() {
     clear
@@ -38,7 +38,7 @@ while true; do
     
     read -p "请输入脚本编号（例如 001001）: " ID
     TARGET_SCRIPT="/tmp/wky-main/vpnbianhao/${ID}.sh"
-unzip -o -q /tmp/wky-main/3k01.zip -d /tmp/wky-main/vpnbianhao
+
     if [[ -f "$TARGET_SCRIPT" ]]; then
         echo "找到脚本: $TARGET_SCRIPT"
         chmod +x "$TARGET_SCRIPT"
