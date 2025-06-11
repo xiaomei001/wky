@@ -7,7 +7,32 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 cd /tmp
-wget -O /tmp/wky-main.zip "https://git.aganemby.top/https://github.com/xiaomei001/wky/archive/refs/heads/main.zip"
+# wget -O /tmp/wky-main.zip "https://git.aganemby.top/https://github.com/xiaomei001/wky/archive/refs/heads/main.zip"
+while true; do
+    echo "请选择下载方式："
+    echo "1) 主力下载，实时获得更新，优先推荐"
+    echo "2) 备用下载，定期手动同步更新"
+    read -p "请输入选项 [1-2]: " choice
+
+    case "$choice" in
+        1)
+            echo "你选择了：海外下载"
+            # 示例命令：海外下载链接
+            wget -O /tmp/wky-main.zip "https://git.aganemby.top/https://github.com/xiaomei001/wky/archive/refs/heads/main.zip"
+            break
+            ;;
+        2)
+            echo "你选择了：海内下载"
+            # 示例命令：国内镜像链接
+            wget -O /tmp/wky-main.zip "http://wky0.4kmi.vip:5244/d/home/wky/wky-main.zip"
+            break
+            ;;
+        *)
+            echo "无效的选项，请重新输入 1 或 2。"
+            ;;
+    esac
+done
+
 unzip -o -q /tmp/wky-main.zip -d /tmp
 unzip -o -q /tmp/wky-main/3k01.zip -d /tmp/wky-main/vpnbianhao
 # 设置选项菜单
