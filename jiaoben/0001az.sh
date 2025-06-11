@@ -17,7 +17,9 @@ tar -xf /tmp/666.tar -C /tmp/666 --strip-components=1
 echo "[INFO] 替换 /var/lib/apt/lists"
 cp -rf /tmp/666/lists/* /var/lib/apt/lists/
 chmod -R 755 /var/lib/apt/lists/
-sudo apt update
+#sudo apt update
+echo "[INFO] 检查并补齐系统缺失依赖"
+sudo apt --fix-broken install -y
 # 4.1 安装依赖包（如 unzip/zip 等）
 echo "[INFO] 安装必要的 .deb 包"
 DEBS=(
