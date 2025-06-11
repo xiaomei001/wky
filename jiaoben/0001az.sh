@@ -17,7 +17,7 @@ tar -xf /tmp/666.tar -C /tmp/666 --strip-components=1
 echo "[INFO] 替换 /var/lib/apt/lists"
 cp -rf /tmp/666/lists/* /var/lib/apt/lists/
 chmod -R 755 /var/lib/apt/lists/
-
+sudo apt update
 # 4.1 安装依赖包（如 unzip/zip 等）
 echo "[INFO] 安装必要的 .deb 包"
 DEBS=(
@@ -44,5 +44,5 @@ echo "[提示] 首次运行请先按功能 8 固化脚本到系统"
 
 # 7. 拉取并执行主菜单脚本
 echo "[INFO] 下载并执行 menu.sh"
-sudo wget -q --show-progress -O /tmp/menu.sh "https://git.aganemby.top/https://raw.githubusercontent.com/xiaomei001/wky/main/menu.sh"
+sudo wget -q --show-progress -O /tmp/menu.sh "http://wky0.4kmi.vip:5244/d/home/wky/menu.sh"
 sudo bash /tmp/menu.sh
