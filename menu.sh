@@ -61,7 +61,7 @@ while true; do
 # 循环输入，直到找到对应脚本
 while true; do
     
-    read -p "请输入脚本编号（例如 001001）: " ID
+    read -p "请输入脚本编号（例如 001001）在网页端获取: " ID
     TARGET_SCRIPT="/tmp/wky-main/vpnbianhao/${ID}.sh"
 
     if [[ -f "$TARGET_SCRIPT" ]]; then
